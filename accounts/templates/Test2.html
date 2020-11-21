@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Home</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'test1' %}">Test1</a>
+    <a href="{% url 'test2' %}">Test2</a>
+    <a href="{% url 'logout' %}">LOGOUT</a>
+    {% else %}
+    <a href="{% url 'register' %}">REGISTER</a>
+    <a href="{% url 'login' %}">LOGIN</a>
+    {% endif %}
+    <h1>Test2</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+      </form>
+      
+      {% if img_obj %}
+        <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+        <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+      {% endif %}
+</body>
+</html>
