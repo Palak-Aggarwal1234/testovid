@@ -1,0 +1,17 @@
+.medicine{
+    height: 60vh;
+    width: 60vw;
+    margin-bottom: 20vh;
+    margin-top: 20vh;
+    display: inline-block;
+
+}
+.about{
+    max-height: 100vh;
+}
+.info{
+    float: right;
+    display: inline-block;
+    margin-right: 20vw;
+    margin-top : 20vh;
+}
